@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+*{
+  box-sizing: border-box;
+}
+
+.conteiner{
+  display: flex;
+  height: 95vh;
+}
+
+.musicPlayer{
+  background-color: white;
+  width: 465px;
+  height: 130px;
+  margin: auto;
+  border-radius: 100px;
+  box-shadow: 0 7px 0 8px rgba(0, 0, 0, 1);
+  display: flex;
+  z-index: 0;
+  position: relative;
+}
+
+.titleMP3{
+  position: absolute;
+  color: white;
+  width: 100%;
+  text-shadow: 0px 0px 1px black;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+}
+
+.typeMP3{
+  position: absolute;
+  width: 100%;
+  color: white;
+  text-shadow: 0px 0px 1px black;
+  font-size: 16px;
+  text-align: center;
+  font-family: "Inter";
+  top: 60%;
+}
+
+.visor{
+  background-color: #9CB398;
+  height: 50px;
+  width: 230px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.visor::before{
+  box-shadow: 0px 0px 0px 27px rgba(0, 0, 0, 0.8);
+  border-radius: 50px;
+  content: '';
+  height: 50px;
+  width: 230px;
+  position: absolute;  
+  z-index: -1;
+}
+
+
+.artist-song{
+  text-align: center;
+  font-size: 12px;
+  animation: nameVisor 7s ease infinite;
+  position: relative;
+  top: -5px;
+}
+
+.artist-name{
+  font-size: 8px;
+  text-align: center;
+  top: -7px;
+  position: relative;
+  animation: nameVisor 7s ease infinite;
+  top: -13px;
+}
+
+input[type="range"] {
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+  background: rgb(72, 72, 72);
+  cursor: pointer;
+  width: 100px;
+  top: 100%;
+  height: 5px;
+  visibility: hidden;
+  border-radius: 20px;
+  transition: 1s ease;
+  opacity: 0;
+}
+
+input[type="range"].active{
+  visibility: visible;
+  top: 115%;
+  opacity: 1;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  height: 0.5rem;
+  background-color: #7b53ff;
+  -webkit-appearance: none;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+}
+
+.controlVolume{
+  position: absolute;
+  left: 7%;
+  font-size: 23px;
+  top: 80%;
+  cursor: pointer;
+}
+
+@keyframes nameVisor {
+  0%{
+    transform: translateX(-65%);
+
+  }
+
+  100%{
+    transform: translateX(65%);
+  }
+}
+
+
+.progressPlayer{
+  background: black;
+  border-radius: 5px;
+  width: 90%;
+  margin: 0 10px 20px;
+  height: 2px;
+  top: -2px;
+  position: relative;
+  cursor: pointer;
+}
+
+.progress{
+  background-color: rgb(255, 255, 255);
+  width: 0%;
+  height: 100%;
+  position: relative;
+  transition: width 0.1s linear;
+}
+
+.music-duration{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  top: -17px;
+}
+
+.visor span{
+  position: relative;
+}
+
+.controls {
+  cursor: pointer; /* Adiciona esta linha para definir o cursor como uma mão */
+  top: 35%;
+  position: relative;  
+  width: 30px;
+  height: 30px;
+}
+
+#playPause {
+  width: 43px;
+  height: 43px;
+  margin-left: 25px;
+}
+
+#skip, #previous {
+  right: 15px;
+  margin: 0 6px;
+}
+
+
+.bx-skip-next{
+  font-size: 43px;
+}
+
+.bx-skip-previous{
+  font-size: 43px;
+}
